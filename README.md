@@ -1,4 +1,4 @@
-# Node DB2 Project Starter Code
+<!-- # Node DB2 Project Starter Code
 
 ## Introduction
 
@@ -23,11 +23,11 @@ There are two possible ways to submit your project. Your instructor should have 
 - [ ] Fork and clone the repository.
 - [ ] Implement your project in a `firstname-lastname` branch.
 - [ ] Create a pull request of `firstname-lastname` against your `main` branch.
-- [ ] Open the assignment in Canvas and submit your pull request.
+- [ ] Open the assignment in Canvas and submit your pull request. -->
 
-### Task 2: Minimum Viable Product
+<!-- ### Task 2: Minimum Viable Product
 
-Build a RESTful API for an "cars" resource. The client for this API is a car dealer.
+Build a RESTful API for an "cars" resource. The client for this API is a car dealer. -->
 
 #### Cars Schema
 
@@ -74,16 +74,16 @@ The critical information for each car is the vin, make, model, and mileage. They
 - Manually test your endpoints with a REST client like `Insomnia` or `Postman` to check they are working as expected.
 - Test your endpoints automatically by running `npm test`.
 
-#### Notes
+<!-- #### Notes -->
 
-- You are welcome to create additional files but **do not move or rename existing files** or folders.
-- Do not alter your `package.json` file except to install additional libraries or add additional scripts.
-- In your solution, it is essential that you follow best practices and produce clean and professional results.
-- Schedule time to review, refine, and assess your work.
-- Perform basic professional polishing including spell-checking and grammar-checking on your work.
+<!-- - You are welcome to create additional files but **do not move or rename existing files** or folders. -->
+<!-- - Do not alter your `package.json` file except to install additional libraries or add additional scripts. -->
+<!-- - In your solution, it is essential that you follow best practices and produce clean and professional results. -->
+<!-- - Schedule time to review, refine, and assess your work. -->
+<!-- - Perform basic professional polishing including spell-checking and grammar-checking on your work. -->
 
-### Task 3: Stretch Problems
+<!-- ### Task 3: Stretch Problems
 
 - Add seed data to the database using `knex seeds`
 - Add `[PUT]` and `[DELETE]` operations to your API.
-- Write a schema file for a `sales` table. This table should track information on the sale of each car. You may wish to research `foreign keys` in order to link each sale to the entry in `cars` which sold.
+- Write a schema file for a `sales` table. This table should track information on the sale of each car. You may wish to research `foreign keys` in order to link each sale to the entry in `cars` which sold. -->
