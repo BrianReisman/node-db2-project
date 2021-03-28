@@ -45,15 +45,15 @@ Build a RESTful API for an "cars" resource. The client for this API is a car dea
 
 #### Write Model Functions
 
-- Write the following db access functions inside `api/cars/cars-model.js` using Knex:
+<!-- - Write the following db access functions inside `api/cars/cars-model.js` using Knex: -->
 
   <!-- - `getAll` resolves to an array of car records (or an empty array) -->
   <!-- - `getById` resolves to a car record by the given id -->
   <!-- - `create` resolves to the newly created car record -->
 
-#### Write Middleware
+<!-- #### Write Middleware -->
 
-- Write the following middlewares inside `api/cars/cars-middleware.js`:
+<!-- - Write the following middlewares inside `api/cars/cars-middleware.js`: -->
 
   <!-- - `checkCarId` returns a status 404 with a `{ message: "car with id <car id> is not found" }` if the id in `req.params` does not exist in the database. -->
 
@@ -61,7 +61,7 @@ Build a RESTful API for an "cars" resource. The client for this API is a car dea
 
   <!-- - `checkVinNumberValid` returns a status 400 with a `{ message: "vin <vin number> is invalid" }` if the vin number is [invalid](https://www.npmjs.com/package/vin-validator). -->
 
-  - `checkVinNumberUnique` returns a status 400 with a `{ message: "vin <vin number> already exists" }` if the vin number already exists in the database.
+  <!-- - `checkVinNumberUnique` returns a status 400 with a `{ message: "vin <vin number> already exists" }` if the vin number already exists in the database. -->
 
 <!-- ### Write a Cars API -->
 
