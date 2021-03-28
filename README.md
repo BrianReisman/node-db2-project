@@ -59,7 +59,7 @@ Build a RESTful API for an "cars" resource. The client for this API is a car dea
 
   <!-- - `checkCarPayload` returns a status 400 with a `{ message: "<field name> is missing" }` if any required field is missing. -->
 
-  - `checkVinNumberValid` returns a status 400 with a `{ message: "vin <vin number> is invalid" }` if the vin number is [invalid](https://www.npmjs.com/package/vin-validator).
+  <!-- - `checkVinNumberValid` returns a status 400 with a `{ message: "vin <vin number> is invalid" }` if the vin number is [invalid](https://www.npmjs.com/package/vin-validator). -->
 
   - `checkVinNumberUnique` returns a status 400 with a `{ message: "vin <vin number> already exists" }` if the vin number already exists in the database.
 

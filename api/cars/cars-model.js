@@ -5,12 +5,15 @@ const getAll = () => {
 };
 
 const getById = (id) => {
-  return db("cars").where({ carid: id }).first()
-  // DO YOUR MAGIC
+  return db("cars").where({ carid: id }).first();
+};
+
+const getByVin = async (vin) => {
+  const carByVin = await db("cars").where({ vin }).first();
+  return carByVin;
 };
 
 const create = async (newCar) => {
-  console.log("from model", newCar);
   const car = await db("cars").insert(newCar);
   return car;
 };
@@ -19,4 +22,5 @@ module.exports = {
   getAll,
   getById,
   create,
+  getByVin,
 };

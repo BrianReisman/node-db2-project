@@ -1,4 +1,5 @@
 const Cars = require("./cars-model");
+const vinValidator = require("vin-validator");
 
 const checkCarId = async (req, res, next) => {
   try {
@@ -31,17 +32,32 @@ const checkCarPayload = (req, res, next) => {
   }
 };
 
-// const checkVinNumberValid = (req, res, next) => {
-// //   - `checkVinNumberValid` returns a status 400 with a `{ message: "vin <vin number> is invalid" }` if the vin number is [invalid](https://www.npmjs.com/package/vin-validator).
-// }
+const checkVinNumberValid = (req, res, next) => {
+  const isValidVin = vinValidator.validate(req.body.vin);
+  if (isValidVin) {
+    next();
+  } else {
+    res.status(400).json({ message: `vin ${req.body.vin} is invalid` });
+  }
+};
 
-// const checkVinNumberUnique = (req, res, next) => {
-// //   - `checkVinNumberUnique` returns a status 400 with a `{ message: "vin <vin number> already exists" }` if the vin number already exists in the database.
-// }
+const checkVinNumberUnique = async (req, res, next) => {
+  const vin = (req.body.vin)
+  try {
+    const vinExists = await Cars.getByVin(vin);
+    if (vinExists) {
+      return res.status(400).json({ message: `vin ${vin} already exists` });
+    } else {
+      next();
+    }
+  } catch (err) {
+    res.status(500).json({ status: "500", err: err.message, location: 'middleware', middleware: 'checkVinNumber Unique' });
+  }
+};
 
 module.exports = {
   checkCarId,
   checkCarPayload,
-  // checkVinNumberValid,
-  // checkVinNumberUnique
+  checkVinNumberValid,
+  checkVinNumberUnique,
 };
