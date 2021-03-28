@@ -1,22 +1,22 @@
-const db = require('../../data/db-config')
+const db = require("../../data/db-config");
 
 const getAll = () => {
-  return db('cars')
-}
+  return db("cars");
+};
 
-const getById = id => {
-  return db('cars').where({carid: id})
+const getById = (id) => {
+  return db("cars").where({ carid: id }).first()
   // DO YOUR MAGIC
-}
+};
 
-const create = async newCar => {
-  console.log('from model', newCar)
-  const car = await db('cars').insert(newCar)
+const create = async (newCar) => {
+  console.log("from model", newCar);
+  const car = await db("cars").insert(newCar);
   return car;
-}
+};
 
 module.exports = {
   getAll,
-getById,
-create
-}
+  getById,
+  create,
+};

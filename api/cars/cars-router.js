@@ -1,5 +1,11 @@
 const router = require("express").Router();
 const Cars = require("./cars-model");
+const {
+  checkCarId,
+  checkCarPayload,
+  // checkVinNumberValid,
+  // checkVinNumberUnique,
+} = require("./cars-middleware");
 
 router.get("/", async (req, res) => {
   try {
@@ -15,26 +21,11 @@ router.get("/", async (req, res) => {
   }
 });
 
-router.get("/:id", async (req, res) => {
-  try {
-    const singleCar = await Cars.getById(req.params.id);
-    if (singleCar) {
-      console.log(singleCar);
-      res.status(200).json(singleCar);
-    } else {
-      console.log(singleCar);
-      res.status(404).json({ message: "error from else" });
-    }
-  } catch (err) {
-    console.log(err)
-    res.status(500).json({ status: "500", err });
-  }
-
-  // console.log("[GET] /:id inside car router");
-  // res.send("b");
+router.get("/:id", checkCarId, async (req, res) => {
+  res.status(200).json(req.car);
 });
 
-router.post("/", async (req, res) => {
+router.post("/", checkCarPayload, async (req, res) => {
   console.log(req.body);
   try {
     const newCar = await Cars.create(req.body);
